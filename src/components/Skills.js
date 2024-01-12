@@ -1,7 +1,16 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import skill1 from "../assets/img/skill1.png";
+import skill2 from "../assets/img/skill2.png";
+import skill3 from "../assets/img/skill3.png";
+import skill4 from "../assets/img/skill4.png";
+import skill5 from "../assets/img/skill5.png";
+import skill6 from "../assets/img/skill6.png";
+import skill7 from "../assets/img/skill7.png";
+import skill8 from "../assets/img/skill8.png";
+import skill9 from "../assets/img/skill9.png";
+import skill10 from "../assets/img/skill10.png";
+import skill11 from "../assets/img/skill11.png";
 import Carousel from 'react-multi-carousel';
+
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.png"
 
@@ -32,30 +41,58 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>During my academic journey I have gained expertise in these programming languages<br></br> C/C++, HTML, JS, CSS, PHP, Python</p>
+                        <p>During my academic journey I have gained expertise in these programming languages<br></br> C/C++, HTML, JS, CSS, PHP, MySQL<br></br> I am familiar with the React.js, Node.js, and Express.js frameworks and MongoDB database. </p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>C/C++</h5>
+                                <img src={skill1} alt="Images"/>
+                                <h5>C++</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Frontend</h5>
+                                <img src={skill2} alt="Images" />
+                                <h5>Html</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Backend</h5>
+                                <img src={skill3} alt="Images" />
+                                <h5>Javascript</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Python</h5>
+                                <img src={skill4} alt="Images" />
+                                <h5>CSS</h5>
+                            </div>
+                            <div className="item">
+                                <img src={skill5} alt="Images" />
+                                <h5>PHP</h5>
+                            </div>
+                            <div className="item">
+                                <img src={skill6} alt="Images" />
+                                <h5>MySQL</h5>
+                            </div>
+                            <div className="item">
+                                <img src={skill7} alt="Images" />
+                                <h5>ReactJS</h5>
+                            </div>
+                            <div className="item">
+                                <img src={skill8} alt="Images" />
+                                <h5>NodeJS</h5>
+                            </div>
+                            <div className="item">
+                                <img src={skill9} alt="Images" />
+                                <h5>ExpressJS</h5>
+                            </div>
+                            <div className="item">
+                                <img src={skill10} alt="Images" />
+                                <h5>MongoDB</h5>
+                            </div>
+                            <div className="item">
+                                <img src={skill11} alt="Images" />
+                                <h5>Git</h5>
                             </div>
                         </Carousel>
                     </div>
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+        <img className="background-image-left" src={colorSharp} alt="Images" />
     </section>
   )
 }
