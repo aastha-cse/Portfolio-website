@@ -10,7 +10,7 @@ import skill9 from "../assets/img/skill9.png";
 import skill10 from "../assets/img/skill10.png";
 import skill11 from "../assets/img/skill11.png";
 import Carousel from 'react-multi-carousel';
-
+import Marquee from 'react-fast-marquee';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.png"
 
@@ -42,7 +42,7 @@ export const Skills = () => {
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
                         <p>During my academic journey I have gained expertise in these programming languages<br></br> C/C++, HTML, JS, CSS, PHP, MySQL<br></br> I am familiar with the React.js, Node.js, and Express.js frameworks and MongoDB database. </p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                        <Marquee responsive={responsive} infinite={true} direction="left" scrollamount="5" className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={skill1} alt="Images"/>
                                 <h5>C++</h5>
@@ -87,7 +87,7 @@ export const Skills = () => {
                                 <img src={skill11} alt="Images" />
                                 <h5>Git</h5>
                             </div>
-                        </Carousel>
+                        </Marquee>
                     </div>
                 </div>
             </div>
