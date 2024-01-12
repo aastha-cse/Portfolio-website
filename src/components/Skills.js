@@ -9,7 +9,6 @@ import skill8 from "../assets/img/skill8.png";
 import skill9 from "../assets/img/skill9.png";
 import skill10 from "../assets/img/skill10.png";
 import skill11 from "../assets/img/skill11.png";
-import Carousel from 'react-multi-carousel';
 import Marquee from 'react-fast-marquee';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.png"
