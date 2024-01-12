@@ -4,6 +4,8 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -31,11 +33,21 @@ export const Projects = () => {
       description: "November, 2021 - December, 2021",
       imgUrl: projImg4,
     },
+    {
+      title: "Quiz App",
+      description: "August, 2023 - November, 2023",
+      imgUrl: projImg5,
+    },
+    {
+      title: "Vehicle Detection and Counting",
+      description: "March, 2023 - June, 2023",
+      imgUrl: projImg6,
+    },
     
   ];
 
   return (
-    <section className="project" id="projects">
+    <section className="project" id="project">
       <Container>
         <Row>
           <Col size={12}>
@@ -84,7 +96,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt="Images"></img>
     </section>
   )
 }
