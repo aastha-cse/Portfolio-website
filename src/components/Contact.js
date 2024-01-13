@@ -74,7 +74,7 @@ export const Contact = () => {
 
     setButtonText('Sending...');
     emailjs
-      .sendForm('service_2lnndde', 'template_bezpygt', form.current, 'GT2eVQhPlIG_V__Y3')
+    .sendForm('service_av6ascn', 'template_y8ddcsa', form.current, 'jukw0PfOSy_KQEfea')
       .then(
         (result) => {
           setButtonText('Send');
@@ -150,7 +150,7 @@ export const Contact = () => {
                         <textarea
                           rows="6"
                           value={formDetails.message}
-                          name="message_"
+                          name="message"
                           placeholder="Message"
                           onChange={(e) => onFormUpdate('message', e.target.value)}
                         ></textarea>
