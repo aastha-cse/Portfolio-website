@@ -93,7 +93,7 @@ export const Projects = () => {
                       <p>I am dedicated to continuous growth and learning, staying up-to-date with the latest technologies and trends in order to provide innovative solutions. I thrive on challenges and enjoy finding creative approaches to solve complex problems.<br></br>Collaboration is at the heart of my work. I believe in building strong relationships with clients and colleagues, fostering an environment of open communication. By working closely together, we can achieve remarkable outcomes and bring ideas to life.<br></br>Thank you for taking the time to explore my portfolio. I hope it has provided you with insights into my capabilities and the value I can bring to your projects. I look forward to connecting and exploring how we can collaborate to achieve great things.</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Thankyou for visiting!</p><br></br><p><a href="https://github.com/aastha-cse" class="text-white">Click to visit my Github Profile</a></p>
+                      <p style={{fontSize : "30px"}}>Thankyou for visiting!</p>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
