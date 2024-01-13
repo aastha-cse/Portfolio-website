@@ -47,6 +47,13 @@ export const Banner = () => {
     }
   }
 
+  const handleConnectClick = () => {
+    const contactSection = document.getElementById('connect');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="banner" id="home">
       <Container>
@@ -60,7 +67,7 @@ export const Banner = () => {
                   <p>I'm thrilled to have you here. My name is Aastha Gupta, and I'm a student at Graphic Era University. This portfolio showcases my skills and projects in Web Development.</p><br></br>
                   <p>Feel free to browse through my projects and learn more about my skills and expertise. If you have any questions or would like to discuss a potential collaboration, please don't hesitate to get in touch. I'm excited to connect with you and explore how we can work together to bring your ideas to life.</p><br></br>
                   <p>Thank you for visiting, and I hope you enjoy your time exploring my portfolio!</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  <button onClick={handleConnectClick}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
           </Col>
