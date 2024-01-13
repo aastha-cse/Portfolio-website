@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import navIcon2 from '../assets/img/nav-icon2.png';
+import navIcon3 from '../assets/img/nav-icon3.png';
 import { HashLink } from 'react-router-hash-link';
 import {BrowserRouter as Router} from "react-router-dom";
 
@@ -48,9 +48,9 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/aastha-gupta-507380229/"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
-                <a href="https://www.instagram.com/aastha_gupta18/"><img src={navIcon3} alt="" /></a>
+                <a href="https://www.linkedin.com/in/aastha-gupta-507380229/"target="_blank" rel="noopener noreferrer"><img src={navIcon1} alt="" /></a>
+                <a href="https://github.com/aastha-cse"target="_blank" rel="noopener noreferrer"><img src={navIcon2} alt=""/></a>
+                <a href="https://drive.google.com/file/d/1qGtoQDsB1DMjikrdcAuQQYovXn9UKcXX/view?usp=sharing" target="_blank" rel="noopener noreferrer"><img src={navIcon3} alt="" /></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
