@@ -17,31 +17,37 @@ export const Projects = () => {
       title: "Todo-List",
       description: "May, 2023",
       imgUrl: projImg1,
+      githubLink: "https://github.com/aastha-cse/Todo-list"
     },
     {
       title: "Mini Chat App",
       description: "December, 2022 - January, 2023",
       imgUrl: projImg2,
+      githubLink: "https://github.com/aastha-cse/My-chat-app"
     },
     {
       title: "Spotify Clone",
       description: "June, 2022 - July, 2022",
       imgUrl: projImg3,
+      githubLink: "https://github.com/aastha-cse/My-web-project"
     },
     {
       title: "Digital Art",
       description: "November, 2021 - December, 2021",
       imgUrl: projImg4,
+      githubLink: "https://github.com/aastha-cse/My-python-project"
     },
     {
       title: "Quiz App",
       description: "August, 2023 - November, 2023",
       imgUrl: projImg5,
+      githubLink: "https://github.com/aastha-cse/Quiz-App-REST-API-TS-Mongoose"
     },
     {
       title: "Vehicle Detection and Counting",
       description: "March, 2023 - June, 2023",
       imgUrl: projImg6,
+      githubLink: "https://github.com/aastha-cse/Image-processing-project/tree/master"
     },
     
   ];
