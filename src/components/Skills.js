@@ -40,7 +40,7 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>During my academic journey I have gained expertise in these programming languages<br></br> C/C++, HTML, JS, CSS, PHP, MySQL<br></br> I am familiar with the React.js, Node.js, and Express.js frameworks and MongoDB database. </p>
+                        <p>I have gained expertise in these programming languages<br></br> C/C++, HTML, JS, CSS, Java, MySQL<br></br> I am familiar with the React.js, Node.js, and Express.js frameworks and MongoDB database. </p>
                         <Marquee responsive={responsive} infinite={true} direction="left" scrollamount="5" className="skill-slider">
                             <div className="item">
                                 <img src={skill1} alt="Images"/>
