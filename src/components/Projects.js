@@ -1,108 +1,122 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+
+import { Container } from "react-bootstrap";
+
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
 import projImg6 from "../assets/img/project-img6.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
-
   const projects = [
     {
-      title: "Todo-List",
-      description: "May, 2023",
-      imgUrl: projImg1,
-      githubLink: "https://github.com/aastha-cse/Todo-list"
+      title: "Todo List",
+      description: "A task management application for organizing and tracking daily activities.",
+      date: "May 2023",
+      image: projImg1,
+      githubLink: "https://github.com/aastha-cse/Todo-list",
+      number: "01",
     },
     {
       title: "Mini Chat App",
-      description: "December, 2022 - January, 2023",
-      imgUrl: projImg2,
-      githubLink: "https://github.com/aastha-cse/My-chat-app"
+      description: "A real-time messaging application designed to enable seamless communication.",
+      date: "Dec 2022 – Jan 2023",
+      image: projImg2,
+      githubLink: "https://github.com/aastha-cse/My-chat-app",
+      number: "02",
     },
     {
       title: "Spotify Clone",
-      description: "June, 2022 - July, 2022",
-      imgUrl: projImg3,
-      githubLink: "https://github.com/aastha-cse/My-web-project"
+      description: "A music streaming interface inspired by Spotify, with an interactive user experience.",
+      date: "Jun 2022 – Jul 2022",
+      image: projImg3,
+      githubLink: "https://github.com/aastha-cse/My-web-project",
+      number: "03",
     },
     {
       title: "Digital Art",
-      description: "November, 2021 - December, 2021",
-      imgUrl: projImg4,
-      githubLink: "https://github.com/aastha-cse/My-python-project"
+      description: "A Python-based project exploring digital creativity and image manipulation.",
+      date: "Nov 2021 – Dec 2021",
+      image: projImg4,
+      githubLink: "https://github.com/aastha-cse/My-python-project",
+      number: "04",
     },
     {
       title: "Quiz App",
-      description: "August, 2023 - November, 2023",
-      imgUrl: projImg5,
-      githubLink: "https://github.com/aastha-cse/Quiz-App-REST-API-TS-Mongoose"
+      description: "A quiz application built with REST APIs and MongoDB for managing quiz data.",
+      date: "Aug 2023 – Nov 2023",
+      image: projImg5,
+      githubLink: "https://github.com/aastha-cse/Quiz-App-REST-API-TS-Mongoose",
+      number: "05",
     },
     {
-      title: "Vehicle Detection and Counting",
-      description: "March, 2023 - June, 2023",
-      imgUrl: projImg6,
-      githubLink: "https://github.com/aastha-cse/Image-processing-project/tree/master"
+      title: "Vehicle Detection & Counting",
+      description: "An image processing project focused on detecting and counting vehicles.",
+      date: "Mar 2023 – Jun 2023",
+      image: projImg6,
+      githubLink: "https://github.com/aastha-cse/Image-processing-project/tree/master",
+      number: "06",
     },
-    
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="projects-section" id="project">
       <Container>
-        <Row>
-          <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>I have had the opportunity to work on a variety of projects. I enjoy tackling challenges and finding innovative solutions that meet the unique needs of each project.<br></br> Each project represents my dedication to delivering high-quality results and pushing boundaries in Web Development.</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard 
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="second">
-                      <p>I am dedicated to continuous growth and learning, staying up-to-date with the latest technologies and trends in order to provide innovative solutions. I thrive on challenges and enjoy finding creative approaches to solve complex problems.<br></br>Collaboration is at the heart of my work. I believe in building strong relationships with clients and colleagues, fostering an environment of open communication. By working closely together, we can achieve remarkable outcomes and bring ideas to life.<br></br>Thank you for taking the time to explore my portfolio. I hope it has provided you with insights into my capabilities and the value I can bring to your projects. I look forward to connecting and exploring how we can collaborate to achieve great things.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p style={{fontSize : "30px"}}>Thankyou for visiting!</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
-            </TrackVisibility>
-          </Col>
-        </Row>
+        <div className="projects-heading">
+          <span className="section-eyebrow">SELECTED WORK</span>
+
+          <h2>
+            Projects <span>&</span> Work
+          </h2>
+
+          <p>
+            A collection of projects where I explore ideas, solve problems,
+            and build applications using different technologies.
+          </p>
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article className="project-card" key={project.number}>
+              <div className="project-image-wrapper">
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  className="project-image"
+                  loading="lazy"
+                />
+
+                <span className="project-number">
+                  {project.number}
+                </span>
+              </div>
+
+              <div className="project-content">
+                <div className="project-meta">
+                  <span>PROJECT</span>
+                  <span>{project.date}</span>
+                </div>
+
+                <h3>{project.title}</h3>
+
+                <p>{project.description}</p>
+
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                  aria-label={`View ${project.title} source code on GitHub`}
+                >
+                  <span>View on GitHub</span>
+                  <span className="project-link-arrow">↗</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="Images"></img>
     </section>
-  )
-}
+  );
+};

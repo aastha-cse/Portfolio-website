@@ -1,9 +1,8 @@
+
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.png";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
 
 export const Contact = () => {
   const form = useRef();
@@ -16,7 +15,7 @@ export const Contact = () => {
   };
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
+  const [buttonText, setButtonText] = useState("Send Message");
   const [status, setStatus] = useState({});
   const [errors, setErrors] = useState({});
 
@@ -24,6 +23,11 @@ export const Contact = () => {
     setFormDetails((prevDetails) => ({
       ...prevDetails,
       [category]: value,
+    }));
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [category]: "",
     }));
   };
 
@@ -37,15 +41,14 @@ export const Contact = () => {
     if (!formDetails.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formDetails.email)) {
-      newErrors.email = "Invalid email address";
+      newErrors.email = "Please enter a valid email address";
     }
 
-    // Phone is optional, but validate it if entered.
     if (
       formDetails.phone.trim() &&
       !/^\d{10}$/.test(formDetails.phone.trim())
     ) {
-      newErrors.phone = "Enter a valid phone number";
+      newErrors.phone = "Enter a valid 10-digit phone number";
     }
 
     if (!formDetails.message.trim()) {
@@ -59,9 +62,7 @@ export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setButtonText("Sending...");
     setStatus({});
@@ -71,147 +72,176 @@ export const Contact = () => {
         "service_100rrnz",
         "template_y8ddcsa",
         form.current,
-        "jukw0PfOSy_KQEfea",
+        "jukw0PfOSy_KQEfea"
       )
       .then(
         () => {
-          setButtonText("Send");
+          setButtonText("Send Message");
           setFormDetails(formInitialDetails);
           setErrors({});
           setStatus({
             success: true,
-            message: "Message sent successfully!",
+            message: "Your message has been sent successfully!",
           });
         },
         () => {
-          setButtonText("Send");
+          setButtonText("Send Message");
           setStatus({
             success: false,
-            message: "Unable to send message. Please try again later.",
+            message: "Something went wrong. Please try again later.",
           });
-        },
+        }
       );
   };
 
   return (
-    <section className="contact" id="connect">
+    <section className="contact-section" id="connect">
       <Container>
-        <Row className="align-items-center">
-          <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <img
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
-                  }
-                  src={contactImg}
-                  alt="Contact Us"
-                />
-              )}
-            </TrackVisibility>
-          </Col>
+        <div className="contact-heading">
+          <span className="section-eyebrow">LET'S CONNECT</span>
 
-          <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
-                  <h2>Get In Touch</h2>
+          <h2>
+            Get in <span>Touch</span>
+          </h2>
 
-                  <form onSubmit={sendEmail} ref={form}>
-                    <Row>
-                      {/* Left column */}
-                      <Col md={6} className="contact-left">
-                        <div className="form-group">
-                          <input
-                            type="text"
-                            value={formDetails.name}
-                            name="name"
-                            placeholder="Name"
-                            onChange={(e) =>
-                              onFormUpdate("name", e.target.value)
-                            }
-                          />
-                          {errors.name && (
-                            <p className="text-danger">{errors.name}</p>
-                          )}
-                        </div>
+          <p>
+            Have a question, an opportunity, or just want to say hello?
+            I'd love to hear from you.
+          </p>
+        </div>
 
-                        <div className="form-group">
-                          <input
-                            type="email"
-                            value={formDetails.email}
-                            name="email"
-                            placeholder="Email Address"
-                            onChange={(e) =>
-                              onFormUpdate("email", e.target.value)
-                            }
-                          />
-                          {errors.email && (
-                            <p className="text-danger">{errors.email}</p>
-                          )}
-                        </div>
+        <div className="contact-wrapper">
+          <Row className="align-items-center">
+            <Col lg={5} md={5}>
+              <div className="contact-visual">
+                <img src={contactImg} alt="Get in touch illustration" />
 
-                        <div className="form-group">
-                          <input
-                            type="tel"
-                            value={formDetails.phone}
-                            name="phone"
-                            placeholder="Phone No. (Optional)"
-                            onChange={(e) =>
-                              onFormUpdate("phone", e.target.value)
-                            }
-                          />
-                          {errors.phone && (
-                            <p className="text-danger">{errors.phone}</p>
-                          )}
-                        </div>
-                      </Col>
+                <div className="contact-visual-text">
+                  <span>HAVE AN IDEA?</span>
+                  <h3>Let's make something great together.</h3>
+                  <p>
+                    I'm always open to interesting conversations,
+                    collaborations, and new opportunities.
+                  </p>
+                </div>
+              </div>
+            </Col>
 
-                      {/* Right column */}
-                      <Col md={6} className="contact-right">
+            <Col lg={7} md={7}>
+              <div className="contact-form-container">
+                <div className="contact-form-heading">
+                  <h3>Send me a message</h3>
+                  <p>I'll get back to you as soon as possible.</p>
+                </div>
+
+                <form onSubmit={sendEmail} ref={form} noValidate>
+                  <Row>
+                    <Col md={6}>
+                      <div className="contact-form-group">
+                        <label htmlFor="contact-name">Your Name</label>
+                        <input
+                          id="contact-name"
+                          type="text"
+                          name="name"
+                          value={formDetails.name}
+                          placeholder="Enter your name"
+                          onChange={(e) =>
+                            onFormUpdate("name", e.target.value)
+                          }
+                        />
+                        {errors.name && (
+                          <p className="contact-error">{errors.name}</p>
+                        )}
+                      </div>
+                    </Col>
+
+                    <Col md={6}>
+                      <div className="contact-form-group">
+                        <label htmlFor="contact-email">Email Address</label>
+                        <input
+                          id="contact-email"
+                          type="email"
+                          name="email"
+                          value={formDetails.email}
+                          placeholder="you@example.com"
+                          onChange={(e) =>
+                            onFormUpdate("email", e.target.value)
+                          }
+                        />
+                        {errors.email && (
+                          <p className="contact-error">{errors.email}</p>
+                        )}
+                      </div>
+                    </Col>
+
+                    <Col md={12}>
+                      <div className="contact-form-group">
+                        <label htmlFor="contact-phone">
+                          Phone Number <span>(Optional)</span>
+                        </label>
+                        <input
+                          id="contact-phone"
+                          type="tel"
+                          name="phone"
+                          value={formDetails.phone}
+                          placeholder="Enter your phone number"
+                          onChange={(e) =>
+                            onFormUpdate("phone", e.target.value)
+                          }
+                        />
+                        {errors.phone && (
+                          <p className="contact-error">{errors.phone}</p>
+                        )}
+                      </div>
+                    </Col>
+
+                    <Col md={12}>
+                      <div className="contact-form-group">
+                        <label htmlFor="contact-message">Your Message</label>
                         <textarea
-                          rows="8"
-                          value={formDetails.message}
+                          id="contact-message"
+                          rows="5"
                           name="message"
-                          placeholder="Message"
+                          value={formDetails.message}
+                          placeholder="Tell me a little about what you have in mind..."
                           onChange={(e) =>
                             onFormUpdate("message", e.target.value)
                           }
                         />
-
                         {errors.message && (
-                          <p className="text-danger">{errors.message}</p>
+                          <p className="contact-error">{errors.message}</p>
                         )}
+                      </div>
+                    </Col>
 
+                    <Col md={12}>
+                      <div className="contact-submit-area">
                         <button
-                          id="but"
                           type="submit"
                           disabled={buttonText === "Sending..."}
                         >
-                          <span>{buttonText}</span>
+                          {buttonText}
+                          <span>↗</span>
                         </button>
 
-                        <p
-                          className={
-                            status.success === false
-                              ? "text-danger"
-                              : "text-white"
-                          }
-                        >
-                          {status.message}
-                        </p>
-                      </Col>
-                    </Row>
-                  </form>
-                </div>
-              )}
-            </TrackVisibility>
-          </Col>
-        </Row>
+                        {status.message && (
+                          <p
+                            className={`contact-status ${
+                              status.success ? "success" : "failure"
+                            }`}
+                            role="status"
+                          >
+                            {status.message}
+                          </p>
+                        )}
+                      </div>
+                    </Col>
+                  </Row>
+                </form>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </section>
   );

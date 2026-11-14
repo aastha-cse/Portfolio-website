@@ -1,97 +1,68 @@
+
 import skill1 from "../assets/img/skill1.png";
 import skill2 from "../assets/img/skill2.png";
 import skill3 from "../assets/img/skill3.png";
 import skill4 from "../assets/img/skill4.png";
-import skill5 from "../assets/img/skill5.png";
 import skill6 from "../assets/img/skill6.png";
 import skill7 from "../assets/img/skill7.png";
 import skill8 from "../assets/img/skill8.png";
 import skill9 from "../assets/img/skill9.png";
 import skill10 from "../assets/img/skill10.png";
 import skill11 from "../assets/img/skill11.png";
-import Marquee from 'react-fast-marquee';
-import 'react-multi-carousel/lib/styles.css';
-import colorSharp from "../assets/img/color-sharp.png"
+import skill12 from "../assets/img/skill12.png";
+
+import Marquee from "react-fast-marquee";
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
+  const skills = [
+    { name: "C++", image: skill1 },
+    { name: "HTML", image: skill2 },
+    { name: "JavaScript", image: skill3 },
+    { name: "CSS", image: skill4 },
+    { name: "Java", image: skill12 },
+    { name: "MySQL", image: skill6 },
+    { name: "React.js", image: skill7 },
+    { name: "Node.js", image: skill8 },
+    { name: "Express.js", image: skill9 },
+    { name: "MongoDB", image: skill10 },
+    { name: "Git", image: skill11 },
+  ];
 
   return (
-    <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>I have gained expertise in these programming languages<br></br> C/C++, HTML, JS, CSS, Java, MySQL<br></br> I am familiar with the React.js, Node.js, and Express.js frameworks and MongoDB database. </p>
-                        <Marquee responsive={responsive} infinite={true} direction="left" scrollamount="5" className="skill-slider">
-                            <div className="item">
-                                <img src={skill1} alt="Images"/>
-                                <h5>C++</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill2} alt="Images" />
-                                <h5>Html</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill3} alt="Images" />
-                                <h5>Javascript</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill4} alt="Images" />
-                                <h5>CSS</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill5} alt="Images" />
-                                <h5>PHP</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill6} alt="Images" />
-                                <h5>MySQL</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill7} alt="Images" />
-                                <h5>ReactJS</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill8} alt="Images" />
-                                <h5>NodeJS</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill9} alt="Images" />
-                                <h5>ExpressJS</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill10} alt="Images" />
-                                <h5>MongoDB</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skill11} alt="Images" />
-                                <h5>Git</h5>
-                            </div>
-                        </Marquee>
-                    </div>
-                </div>
-            </div>
+    <section className="skills-section" id="skills">
+      <div className="container">
+        <div className="skills-heading">
+          <span className="section-eyebrow">WHAT I WORK WITH</span>
+          <h2>
+            Technical <span>Skills</span>
+          </h2>
+          <p>
+            Technologies and tools I use to build, develop, and maintain
+            software applications.
+          </p>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Images" />
+
+        <div className="skills-marquee-wrapper">
+          <Marquee
+            speed={35}
+            gradient={true}
+            gradientColor="#101114"
+            gradientWidth={100}
+            pauseOnHover={false}
+            className="skills-marquee"
+          >
+            {skills.map((skill, index) => (
+              <div className="skill-card" key={index}>
+                <div className="skill-icon">
+                  <img src={skill.image} alt={skill.name} />
+                </div>
+                <h5>{skill.name}</h5>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+
+      </div>
     </section>
-  )
-}
+  );
+};
