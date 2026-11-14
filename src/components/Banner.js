@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/profile.png";
@@ -6,16 +5,13 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
+const toRotate = ["Application Engineer 2 at Flipkart", "Backend Developer"];
+
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(120);
-
-  const toRotate = [
-    "Application Engineer 2 at Flipkart",
-    "Backend Developer",
-  ];
 
   const period = 1800;
 
@@ -46,7 +42,7 @@ export const Banner = () => {
     }, delta);
 
     return () => clearTimeout(ticker);
-  }, [text, isDeleting, loopNum, delta, toRotate]);
+  }, [text, isDeleting, loopNum, delta]);
 
   // Scroll to contact section
   const handleConnectClick = () => {
@@ -64,7 +60,6 @@ export const Banner = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-
           {/* LEFT CONTENT */}
           <Col xs={12} md={7} xl={7}>
             <TrackVisibility>
@@ -86,12 +81,11 @@ export const Banner = () => {
                   </h2>
 
                   <p className="banner-description">
-                    I build reliable and scalable software experiences,
-                    with a focus on backend engineering and solving
-                    real-world problems. Currently working at Flipkart,
-                    I'm passionate about writing clean code, learning
-                    new technologies and building products that make
-                    a difference.
+                    I build reliable and scalable software experiences, with a
+                    focus on backend engineering and solving real-world
+                    problems. Currently working at Flipkart, I'm passionate
+                    about writing clean code, learning new technologies and
+                    building products that make a difference.
                   </p>
 
                   <div className="banner-tags">
@@ -113,7 +107,6 @@ export const Banner = () => {
                       Explore my work <span>↗</span>
                     </a>
                   </div>
-
                 </div>
               )}
             </TrackVisibility>
@@ -148,7 +141,6 @@ export const Banner = () => {
               )}
             </TrackVisibility>
           </Col>
-
         </Row>
       </Container>
     </section>
