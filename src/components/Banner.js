@@ -46,7 +46,7 @@ export const Banner = () => {
     }, delta);
 
     return () => clearTimeout(ticker);
-  }, [text, isDeleting, loopNum, delta]);
+  }, [text, isDeleting, loopNum, delta, toRotate]);
 
   // Scroll to contact section
   const handleConnectClick = () => {
