@@ -2,7 +2,8 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.png";
+import contactImg from "../../assets/img/contact-img.png";
+import "./Contact.css";
 
 export const Contact = () => {
   const form = useRef();

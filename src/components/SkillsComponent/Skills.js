@@ -1,15 +1,15 @@
 
-import skill1 from "../assets/img/skill1.png";
-import skill2 from "../assets/img/skill2.png";
-import skill3 from "../assets/img/skill3.png";
-import skill4 from "../assets/img/skill4.png";
-import skill6 from "../assets/img/skill6.png";
-import skill7 from "../assets/img/skill7.png";
-import skill8 from "../assets/img/skill8.png";
-import skill9 from "../assets/img/skill9.png";
-import skill10 from "../assets/img/skill10.png";
-import skill11 from "../assets/img/skill11.png";
-import skill12 from "../assets/img/skill12.png";
+import skill1 from "../../assets/img/skill1.png";
+import skill2 from "../../assets/img/skill2.png";
+import skill3 from "../../assets/img/skill3.png";
+import skill4 from "../../assets/img/skill4.png";
+import skill6 from "../../assets/img/skill6.png";
+import skill7 from "../../assets/img/skill7.png";
+import skill8 from "../../assets/img/skill8.png";
+import skill9 from "../../assets/img/skill9.png";
+import skill10 from "../../assets/img/skill10.png";
+import skill11 from "../../assets/img/skill11.png";
+import skill12 from "../../assets/img/skill12.png";
 
 import Marquee from "react-fast-marquee";
 

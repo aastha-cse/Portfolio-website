@@ -1,0 +1,157 @@
+/* ================================
+   FOOTER SECTION
+================================ */
+
+.footer-section {
+  background: #101114;
+  padding: 55px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Main Footer */
+
+.footer-main {
+  padding-bottom: 40px;
+}
+
+/* Brand */
+
+.footer-brand img {
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: #777984;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Social Icons */
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-social .social-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-social .social-icon a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #191a20;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-icon a:hover {
+  background: rgba(170, 54, 124, 0.15);
+  border-color: #aa367c;
+  transform: translateY(-4px);
+}
+
+.footer-social .social-icon img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
+/* Contact */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 9px;
+}
+
+.footer-label {
+  color: #b48aff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.footer-contact a {
+  color: #c2c3cb;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #b48aff;
+}
+
+/* Bottom Footer */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-bottom p {
+  color: #777984;
+  font-size: 11px;
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #999ba5;
+  font-size: 11px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #b48aff;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 767px) {
+  .footer-section {
+    padding: 40px 0 20px;
+  }
+
+  .footer-main {
+    text-align: center;
+    gap: 28px;
+    padding-bottom: 30px;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-contact {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-contact a {
+    font-size: 12px;
+  }
+}

@@ -1,6 +1,6 @@
-import React from 'react';
 import { Col } from 'react-bootstrap';
 import { SlArrowRightCircle } from "react-icons/sl";
+import "./Projects.css";
 
 export const ProjectCard = ({ title, description, imgUrl, githubLink }) => {
   return (
