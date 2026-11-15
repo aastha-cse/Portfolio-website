@@ -1,3 +1,4 @@
+
 /* =====================================
    NAVBAR
 ===================================== */
@@ -116,17 +117,13 @@
   align-items: center;
   gap: 10px;
   padding: 11px 17px;
-
   border: 1px solid rgba(167, 139, 250, 0.7);
   border-radius: 5px;
-
   color: #c4b5fd;
   background: transparent;
-
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
-
   transition: all 0.3s ease;
 }
 
@@ -145,13 +142,18 @@
   transform: translate(3px, -3px);
 }
 
-/* Mobile toggle */
+/* =====================================
+   NAVBAR TOGGLER
+===================================== */
+
+/* Hidden on desktop */
 
 .custom-navbar .navbar-toggler {
+  display: none;
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 7px 10px;
   box-shadow: none;
-  display: block;
+  flex-shrink: 0;
 }
 
 .custom-navbar .navbar-toggler:focus {
@@ -163,10 +165,10 @@
 }
 
 /* =====================================
-   RESPONSIVE
+   TABLET
 ===================================== */
 
-@media (max-width: 991px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .navbar-extras {
     gap: 15px;
     margin-left: 12px;
@@ -186,6 +188,10 @@
   }
 }
 
+/* =====================================
+   MOBILE
+===================================== */
+
 @media (max-width: 767px) {
 
   .custom-navbar {
@@ -194,30 +200,47 @@
     left: 0;
     right: 0;
     width: 100%;
-    max-width: 100%;
     padding: 14px 0;
-    z-index: 1050 !important;
+    z-index: 1055 !important;
     box-sizing: border-box;
   }
+
+  /* Main navbar container */
 
   .custom-navbar > .container {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 25px !important;
-    padding-right: 145px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin: 0 auto !important;
     box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
+
+  /* Logo on left */
 
   .custom-navbar .navbar-brand {
-    margin-right: auto;
-  }
-
-   .custom-navbar .navbar-toggler {
-    margin-right: 0 !important;
+    margin-right: auto !important;
+    padding: 0;
     flex-shrink: 0;
   }
+
+  /* Hamburger on extreme right */
+
+  .custom-navbar .navbar-toggler {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    position: relative;
+    flex-shrink: 0;
+    order: 2;
+  }
+
+  /* Expanded menu */
 
   .custom-navbar .navbar-collapse {
     flex: 0 0 100%;
@@ -226,7 +249,7 @@
     min-width: 0;
     padding: 20px 0 10px;
     margin: 14px 0 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     box-sizing: border-box;
     overflow: hidden;
   }
@@ -235,6 +258,7 @@
     width: 100%;
     margin: 0 !important;
     align-items: flex-start !important;
+    gap: 5px;
   }
 
   .custom-navbar .navbar-link {
@@ -243,6 +267,8 @@
     padding: 10px 0 !important;
     text-align: left;
   }
+
+  /* Social icons and connect button */
 
   .custom-navbar .navbar-extras {
     display: flex;
@@ -266,8 +292,35 @@
   }
 }
 
+/* =====================================
+   SMALL MOBILE
+===================================== */
 
-/* Tighter spacing on mobile */
+@media (max-width: 480px) {
+
+  .custom-navbar {
+    padding: 12px 0;
+  }
+
+  .custom-navbar > .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .navbar-logo {
+    width: 58px;
+  }
+
+  .custom-navbar .navbar-toggler {
+    padding: 6px 9px;
+  }
+}
+
+
+/* =====================================
+   SECTION SPACING
+===================================== */
+
 @media (max-width: 768px) {
   section {
     padding-top: 40px !important;
