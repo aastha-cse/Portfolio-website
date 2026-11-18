@@ -5,7 +5,7 @@ import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon2.png";
 import { HashLink } from "react-router-hash-link";
 import "./NavBar.css";
-import { trackPortfolioClick } from "../analytics";
+import { trackPortfolioClick } from "../../analytics";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
