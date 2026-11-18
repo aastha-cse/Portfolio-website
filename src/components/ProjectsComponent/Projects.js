@@ -1,4 +1,3 @@
-
 import { Container } from "react-bootstrap";
 
 import projImg2 from "../../assets/img/project-img2.png";
@@ -8,12 +7,14 @@ import projImg4 from "../../assets/img/project-img4.png";
 import projImg5 from "../../assets/img/project-img5.png";
 import projImg6 from "../../assets/img/project-img6.png";
 import "./Projects.css";
+import { trackPortfolioClick } from "../../analytics";
 
 export const Projects = () => {
   const projects = [
     {
       title: "Todo List",
-      description: "A task management application for organizing and tracking daily activities.",
+      description:
+        "A task management application for organizing and tracking daily activities.",
       date: "May 2023",
       image: projImg1,
       githubLink: "https://github.com/aastha-cse/Todo-list",
@@ -21,7 +22,8 @@ export const Projects = () => {
     },
     {
       title: "Mini Chat App",
-      description: "A real-time messaging application designed to enable seamless communication.",
+      description:
+        "A real-time messaging application designed to enable seamless communication.",
       date: "Dec 2022 – Jan 2023",
       image: projImg2,
       githubLink: "https://github.com/aastha-cse/My-chat-app",
@@ -29,7 +31,8 @@ export const Projects = () => {
     },
     {
       title: "Spotify Clone",
-      description: "A music streaming interface inspired by Spotify, with an interactive user experience.",
+      description:
+        "A music streaming interface inspired by Spotify, with an interactive user experience.",
       date: "Jun 2022 – Jul 2022",
       image: projImg3,
       githubLink: "https://github.com/aastha-cse/My-web-project",
@@ -37,7 +40,8 @@ export const Projects = () => {
     },
     {
       title: "Digital Art",
-      description: "A Python-based project exploring digital creativity and image manipulation.",
+      description:
+        "A Python-based project exploring digital creativity and image manipulation.",
       date: "Nov 2021 – Dec 2021",
       image: projImg4,
       githubLink: "https://github.com/aastha-cse/My-python-project",
@@ -45,7 +49,8 @@ export const Projects = () => {
     },
     {
       title: "Quiz App",
-      description: "A quiz application built with REST APIs and MongoDB for managing quiz data.",
+      description:
+        "A quiz application built with REST APIs and MongoDB for managing quiz data.",
       date: "Aug 2023 – Nov 2023",
       image: projImg5,
       githubLink: "https://github.com/aastha-cse/Quiz-App-REST-API-TS-Mongoose",
@@ -53,10 +58,12 @@ export const Projects = () => {
     },
     {
       title: "Vehicle Detection & Counting",
-      description: "An image processing project focused on detecting and counting vehicles.",
+      description:
+        "An image processing project focused on detecting and counting vehicles.",
       date: "Mar 2023 – Jun 2023",
       image: projImg6,
-      githubLink: "https://github.com/aastha-cse/Image-processing-project/tree/master",
+      githubLink:
+        "https://github.com/aastha-cse/Image-processing-project/tree/master",
       number: "06",
     },
   ];
@@ -72,8 +79,8 @@ export const Projects = () => {
           </h2>
 
           <p>
-            A collection of projects where I explore ideas, solve problems,
-            and build applications using different technologies.
+            A collection of projects where I explore ideas, solve problems, and
+            build applications using different technologies.
           </p>
         </div>
 
@@ -88,9 +95,7 @@ export const Projects = () => {
                   loading="lazy"
                 />
 
-                <span className="project-number">
-                  {project.number}
-                </span>
+                <span className="project-number">{project.number}</span>
               </div>
 
               <div className="project-content">
@@ -109,6 +114,12 @@ export const Projects = () => {
                   rel="noopener noreferrer"
                   className="project-link"
                   aria-label={`View ${project.title} source code on GitHub`}
+                  onClick={() =>
+                    trackPortfolioClick(
+                      `Project: ${project.title}`,
+                      project.githubLink,
+                    )
+                  }
                 >
                   <span>View on GitHub</span>
                   <span className="project-link-arrow">↗</span>

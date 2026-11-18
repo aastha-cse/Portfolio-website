@@ -1,9 +1,9 @@
-
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../../assets/img/logo.png";
 import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon2.png";
 import "./Footer.css";
+import { trackPortfolioClick } from "../analytics";
 
 export const Footer = () => {
   return (
@@ -24,6 +24,12 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
+                onClick={() =>
+                  trackPortfolioClick(
+                    "LinkedIn",
+                    "https://www.linkedin.com/in/aastha-gupta-507380229/",
+                  )
+                }
               >
                 <img src={navIcon1} alt="LinkedIn" />
               </a>
@@ -33,6 +39,9 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
+                onClick={() =>
+                  trackPortfolioClick("GitHub", "https://github.com/aastha-cse")
+                }
               >
                 <img src={navIcon2} alt="GitHub" />
               </a>
@@ -48,9 +57,7 @@ export const Footer = () => {
         </Row>
 
         <div className="footer-bottom">
-          <p>
-            © {new Date().getFullYear()} Aastha Gupta. All rights reserved.
-          </p>
+          <p>© {new Date().getFullYear()} Aastha Gupta. All rights reserved.</p>
 
           <a href="#home">Back to top ↑</a>
         </div>

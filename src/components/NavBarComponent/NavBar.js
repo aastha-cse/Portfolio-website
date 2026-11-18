@@ -5,6 +5,7 @@ import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon2.png";
 import { HashLink } from "react-router-hash-link";
 import "./NavBar.css";
+import { trackPortfolioClick } from "../analytics";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -57,17 +58,23 @@ export const NavBar = () => {
               className={
                 activeLink === "career" ? "active navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("career")}
+              onClick={() => {
+                onUpdateActiveLink("career");
+                trackPortfolioClick("Career Section", "#career");
+              }}
             >
               Career
             </Nav.Link>
-            
+
             <Nav.Link
               href="#skills"
               className={
                 activeLink === "skills" ? "active navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("skills")}
+              onClick={() => {
+                onUpdateActiveLink("skills");
+                trackPortfolioClick("Skills Section", "#skills");
+              }}
             >
               Skills
             </Nav.Link>
@@ -77,7 +84,10 @@ export const NavBar = () => {
               className={
                 activeLink === "project" ? "active navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("project")}
+              onClick={() => {
+                onUpdateActiveLink("project");
+                trackPortfolioClick("Projects Section", "#project");
+              }}
             >
               Projects
             </Nav.Link>
@@ -90,6 +100,12 @@ export const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
+                onClick={() =>
+                  trackPortfolioClick(
+                    "LinkedIn",
+                    "https://www.linkedin.com/in/aastha-gupta-507380229/",
+                  )
+                }
               >
                 <img src={navIcon1} alt="" />
               </a>
@@ -99,13 +115,20 @@ export const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
+                onClick={() =>
+                  trackPortfolioClick("GitHub", "https://github.com/aastha-cse")
+                }
               >
                 <img src={navIcon2} alt="" />
               </a>
-
             </div>
 
-            <HashLink to="#connect" smooth className="navbar-connect">
+            <HashLink
+              to="#connect"
+              smooth
+              className="navbar-connect"
+              onClick={() => trackPortfolioClick("Contact Section", "#connect")}
+            >
               Let's Connect <span>↗</span>
             </HashLink>
           </div>
